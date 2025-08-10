@@ -6,14 +6,18 @@
 #    By: masase <masase@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/02 15:04:47 by masase            #+#    #+#              #
-#    Updated: 2025/07/21 20:49:24 by masase           ###   ########.fr        #
+#    Updated: 2025/08/10 10:30:41 by masase           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = utile
+NAME = Poly
 
 SRCS = main.cpp \
-	Fixed.cpp
+	Animal.cpp \
+	Cat.cpp \
+	Dog.cpp \
+	WrongAnimal.cpp \
+	WrongCat.cpp \
 
 OBJS = $(SRCS:%.cpp=%.o)
 

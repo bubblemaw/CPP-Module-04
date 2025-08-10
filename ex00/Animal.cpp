@@ -12,7 +12,12 @@
 
 #include "Animal.hpp"
 
-Animal::Animal(void)
+Animal::Animal(void): type("Default")
+{
+	std::cout << "Animal Constructor called" << std::endl;
+}
+
+Animal::Animal(std::string name): type(name)
 {
 	std::cout << "Animal Constructor called" << std::endl;
 }
@@ -36,4 +41,14 @@ Animal &Animal::operator=(const Animal &obj)
 		this->type = obj.type;
 	}
 	return (*this);
+}
+
+void Animal::makeSound(void) const
+{
+	std::cout << "Unknown Animal Sound" << std::endl;
+}
+
+std::string Animal::getType(void) const
+{
+	return (this->type);
 }

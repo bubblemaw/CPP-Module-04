@@ -12,7 +12,7 @@
 
 #include "Dog.hpp"
 
-Dog::Dog(void)
+Dog::Dog(void): Animal("Dog") 
 {
 	std::cout << "Dog Constructor called" << std::endl;
 }
@@ -36,4 +36,9 @@ Dog &Dog::operator=(const Dog &obj)
 		this->type = obj.type;
 	}
 	return (*this);
+}
+
+void Dog::makeSound(void) const
+{
+	std::cout << "GRRRRRR WOUFFFF WOUFFFFF GRRRRRRRR" << std::endl;
 }

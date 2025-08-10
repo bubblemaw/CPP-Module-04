@@ -12,7 +12,7 @@
 
 #include "Cat.hpp"
 
-Cat::Cat(void)
+Cat::Cat(void):Animal("Cat")
 {
 	std::cout << "Cat Constructor called" << std::endl;
 }
@@ -36,4 +36,9 @@ Cat &Cat::operator=(const Cat &obj)
 		this->type = obj.type;
 	}
 	return (*this);
+}
+
+void Cat::makeSound(void) const
+{
+	std::cout << "MEOWWWWWWWWWW RHHH MEOWWWWWWWWW GRRR" << std::endl;
 }
