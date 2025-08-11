@@ -6,7 +6,7 @@
 /*   By: masase <masase@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 18:06:04 by maw               #+#    #+#             */
-/*   Updated: 2025/08/10 12:48:57 by masase           ###   ########.fr       */
+/*   Updated: 2025/08/11 12:38:28 by masase           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
     Dog Bro;
     Dog BIGG(Bro);
 
-    std::cout << "Brain Pointers Memory Adress: " << Bro.GetPtr() << std::endl;
+    std::cout << "Brain Pointers Memory Adress: " << Bro.GetPtr() << std::endl;   
     std::cout << "Brain Pointers Memory Adress: " << BIGG.GetPtr() << std::endl;
     std::cout << std::endl;
     return (0);
