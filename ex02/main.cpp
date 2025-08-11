@@ -6,7 +6,7 @@
 /*   By: masase <masase@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 18:06:04 by maw               #+#    #+#             */
-/*   Updated: 2025/08/11 15:52:10 by masase           ###   ########.fr       */
+/*   Updated: 2025/08/11 16:09:00 by masase           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 int main()
 {
     Animal *SPA[4];
+    //Animal cheese; // doesn't work animal is now a interfaces/abstract classe
     
     int i = 0;
     while (i < 4)
@@ -59,4 +60,3 @@ int main()
 
 //     return 0;
 // }
-

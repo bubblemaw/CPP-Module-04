@@ -6,7 +6,7 @@
 /*   By: masase <masase@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 18:06:04 by maw               #+#    #+#             */
-/*   Updated: 2025/08/10 10:31:03 by masase           ###   ########.fr       */
+/*   Updated: 2025/08/11 15:52:51 by masase           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
     const WrongAnimal* i = new WrongCat();
     
     std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
+    i->makeSound(); //will output the animal sound!
     meta->makeSound();
 
     return 0;

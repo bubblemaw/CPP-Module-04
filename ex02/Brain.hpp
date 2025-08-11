@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: masase <masase@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 10:21:25 by masase            #+#    #+#             */
-/*   Updated: 2025/08/11 15:50:33 by masase           ###   ########.fr       */
+/*   Created: 2025/08/10 10:42:22 by masase            #+#    #+#             */
+/*   Updated: 2025/08/10 11:45:53 by masase           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 # include <iostream>
 # include <ostream>
+# include <string>
 
-class WrongAnimal
+class Brain
 {
-	protected:
-		std::string type;
-	public:
-		WrongAnimal(std::string name);
-		WrongAnimal();
-		~WrongAnimal();
-		WrongAnimal(const WrongAnimal &obj);
-		WrongAnimal &operator=(const WrongAnimal &obj);
-		void makeSound(void) const;
-		std::string getType(void) const;
+    protected:
+        std::string ideas[100];
+    public:
+		Brain();
+		~Brain();
+		Brain(const Brain &obj);
+		Brain &operator=(const Brain &obj);    
+    
 };
 
 #endif
