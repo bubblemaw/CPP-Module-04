@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masase <masase@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maw <maw@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:11:06 by masase            #+#    #+#             */
-/*   Updated: 2025/08/12 14:48:02 by masase           ###   ########.fr       */
+/*   Updated: 2025/08/13 17:33:52 by maw              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class AMateria
 {
     protected:
-        std::string const & _type;
+        std::string type;
     public:
         AMateria(std::string const & type);
         ~AMateria();

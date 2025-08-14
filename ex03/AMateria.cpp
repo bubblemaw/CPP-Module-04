@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masase <masase@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maw <maw@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:11:09 by masase            #+#    #+#             */
-/*   Updated: 2025/08/12 15:00:05 by masase           ###   ########.fr       */
+/*   Updated: 2025/08/13 16:52:55 by maw              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const & type) :_type(type)
+AMateria::AMateria(std::string const & type) :type(type)
 {
     std::cout << "AMateria Constructor called" << std::endl;
 }
 
-AMateria::AMateria(const AMateria &obj): AMateria(obj._type)
+AMateria::AMateria(const AMateria &obj): AMateria(obj.type)
 {
     std::cout << "AMateria Copy Constructor called" << std::endl;
     *this = obj;
@@ -32,7 +32,7 @@ AMateria &AMateria::operator=(const AMateria &obj)
 {
     if (this != &obj)
     {
-        this->_type = obj._type;
+        type = obj.type;
     }
     return (*this);
 }
