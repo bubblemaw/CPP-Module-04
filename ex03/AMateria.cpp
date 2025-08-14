@@ -12,6 +12,11 @@
 
 #include "AMateria.hpp"
 
+AMateria::AMateria() :type("Default Materia")
+{
+    std::cout << "AMateria Constructor called" << std::endl;
+}
+
 AMateria::AMateria(std::string const & type) :type(type)
 {
     std::cout << "AMateria Constructor called" << std::endl;
@@ -30,9 +35,11 @@ AMateria::~AMateria()
 
 AMateria &AMateria::operator=(const AMateria &obj)
 {
+    std::cout << "AMateria Assignement operator called" << std::endl;    
     if (this != &obj)
     {
         type = obj.type;
     }
     return (*this);
 }
+

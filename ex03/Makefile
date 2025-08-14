@@ -10,10 +10,16 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = utile
+NAME = Interface
 
 SRCS = main.cpp \
-	Fixed.cpp
+	AMateria.cpp \
+	Character.cpp \
+	Cure.cpp \
+	Ice.cpp \
+	ICharacter.cpp \
+	IMateriaSource.cpp \
+	MateriaSource.cpp \
 
 OBJS = $(SRCS:%.cpp=%.o)
 

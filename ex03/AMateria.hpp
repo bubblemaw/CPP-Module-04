@@ -15,12 +15,14 @@
 # include <string>
 # include <ostream>
 # include <iostream>
+# include "Character.hpp"
 
 class AMateria
 {
     protected:
         std::string type;
     public:
+        AMateria();
         AMateria(std::string const & type);
         ~AMateria();
         AMateria(const AMateria &obj);
