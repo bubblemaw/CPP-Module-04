@@ -17,7 +17,7 @@ Ice::Ice() :AMateria("ice")
     std::cout << "Ice Constructor called" << std::endl;
 }
 
-Ice::Ice(const Ice &obj): AMateria("ice")
+Ice::Ice(const Ice &obj)
 {
     std::cout << "Ice Copy Constructor called" << std::endl;
     *this = obj;
@@ -45,5 +45,5 @@ AMateria* Ice::clone() const
 
 void Ice::use(ICharacter& target)
 {
-    std::cout << "* shoots an ice bolt at" << target.getName() << " *" << std::endl;
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

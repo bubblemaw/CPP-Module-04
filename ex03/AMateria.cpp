@@ -22,7 +22,7 @@ AMateria::AMateria(std::string const & type) :type(type)
     std::cout << "AMateria Constructor called" << std::endl;
 }
 
-AMateria::AMateria(const AMateria &obj): AMateria(obj.type)
+AMateria::AMateria(const AMateria &obj)
 {
     std::cout << "AMateria Copy Constructor called" << std::endl;
     *this = obj;
@@ -43,3 +43,12 @@ AMateria &AMateria::operator=(const AMateria &obj)
     return (*this);
 }
 
+void AMateria::use(ICharacter& target)
+{
+    std::cout << "Default Materia USE" << std::endl;
+}
+
+std::string const & AMateria::getType() const
+{
+    return(type);
+}

@@ -23,7 +23,7 @@ SRCS = main.cpp \
 
 OBJS = $(SRCS:%.cpp=%.o)
 
-FLAGS = -Wall -Werror -Wextra -std=c++98
+FLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 
 RM = rm -f
 

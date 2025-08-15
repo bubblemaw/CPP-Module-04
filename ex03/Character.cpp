@@ -15,17 +15,34 @@
 Character::Character(std::string name): _name(name)
 {
 	std::cout << "Character Constructor called" << std::endl;	
+	int i = 0;
+	while(i < 4)
+	{
+		inventory[i] = NULL;
+		i++;
+	}
 }
 
 Character::Character(void):_name("Default")
 {
 	std::cout << "Character Constructor called" << std::endl;
+	int i = 0;	
+	while(i < 4)
+	{
+		inventory[i] = NULL;
+		i++;
+	}	
 }
 
 Character::~Character(void)
 {
 	std::cout << "Character Destructor called" << std::endl;
-	//delete _brain;	
+	int i = 0;
+	while (i < 4)
+	{
+		delete inventory[i];
+		i++;
+	}
 }
 
 Character::Character(const Character &obj)
@@ -37,12 +54,20 @@ Character::Character(const Character &obj)
 Character &Character::operator=(const Character &obj)
 {
 	std::cout << "Character Assignement operator called" << std::endl;
-	// if (this != &obj)
-	// {
-	// 	this->_brain = new Brain;
-	// 	*this->_brain = *(obj._brain);
-	// 	this->type = obj.type;
-	// }
+	if (this == &obj)
+		return (*this);
+	int i = 0;	
+	while (i < 4)
+	{
+		if (this->inventory[i])
+			delete this->inventory[i];
+		if (obj.inventory[i])
+			this->inventory[i] = obj.inventory[i];
+		else
+			this->inventory[i] = NULL;
+		i++;
+	}
+	this->_name = obj._name;
 	return (*this);
 }
 
@@ -56,7 +81,7 @@ void Character::equip(AMateria *m)
     int i = 0;
     while (inventory[i]) // maybe put i < 4
         i++;
-    if (inventory[i])  
+    if (!inventory[i])  
         inventory [i] = m;
 }
 
@@ -67,5 +92,5 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-    // inventory[idx].use(target);
+    inventory[idx]->use(target);
 }

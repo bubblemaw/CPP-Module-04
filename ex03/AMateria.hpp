@@ -15,6 +15,7 @@
 # include <string>
 # include <ostream>
 # include <iostream>
+# include "ICharacter.hpp"
 
 class ICharacter;
 
@@ -23,9 +24,9 @@ class AMateria
     protected:
         std::string type;
     public:
-        AMateria();
+        AMateria();    
         AMateria(std::string const & type);
-        ~AMateria();
+        virtual ~AMateria();
         AMateria(const AMateria &obj);
         AMateria &operator=(const AMateria &obj);
         std::string const & getType() const; //Returns the materia type

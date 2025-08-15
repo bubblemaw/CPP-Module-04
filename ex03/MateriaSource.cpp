@@ -15,6 +15,12 @@
 MateriaSource::MateriaSource() 
 {
     std::cout << "MateriaSource Constructor called" << std::endl;
+    int i = 0;
+    while (i < 4)
+    {
+        this->inventory[i] = NULL;
+        i++;
+    }
 }
 
 MateriaSource::MateriaSource(const MateriaSource &obj)
@@ -26,22 +32,31 @@ MateriaSource::MateriaSource(const MateriaSource &obj)
 MateriaSource::~MateriaSource()
 {
     std::cout << "MateriaSource Destructor called" << std::endl;
+	int i = 0;
+	while (i < 4)
+	{
+		delete inventory[i];
+		i++;
+	}    
 }
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &obj)
 {
     std::cout << "MateriaSource Assignement operator called" << std::endl;
-    // 	if (this != &obj)
-	// {
-	// 	this->inventory = new AMateria;
-	// 	*this->_brain = *(obj._brain);
-	// 	this->type = obj.type;
-	// }
-    // if (this != &obj)
-    // {
-    //     this->inventory = obj.inventory;
-    // }
-    return (*this);
+	if (this == &obj)
+		return (*this);
+	int i = 0;	
+	while (i < 4)
+	{
+		if (this->inventory[i])
+			delete this->inventory[i];
+		if (obj.inventory[i])
+			this->inventory[i] = obj.inventory[i];
+		else
+			this->inventory[i] = NULL;
+		i++;
+	}
+	return (*this);
 }
 
 void MateriaSource::learnMateria(AMateria* m)
@@ -49,17 +64,19 @@ void MateriaSource::learnMateria(AMateria* m)
     int i = 0;
     while (inventory[i]) // maybe put i < 4
         i++;
-    if (inventory[i])  
-        inventory [i] = m;
+    if (!inventory[i])  
+        inventory[i] = m;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
     int i = 0;
-    while (inventory[i]) // maybe put i < 4
+    while (i < 4)
     {
-        if (inventory [i]->getType() == type)  
-            return (inventory[i]);
+        if (inventory[i]->getType() == type)      
+            return (inventory[i]->clone());
+        i++;
+        std::cout << "ca tourne" << std::endl;
     } 
-    return (0);
+    return (NULL);
 }
