@@ -6,7 +6,7 @@
 /*   By: maw <maw@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:11:06 by masase            #+#    #+#             */
-/*   Updated: 2025/08/13 17:33:52 by maw              ###   ########.fr       */
+/*   Updated: 2025/08/15 00:22:53 by maw              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 # include <string>
 # include <ostream>
 # include <iostream>
-# include "Character.hpp"
+
+class ICharacter;
 
 class AMateria
 {

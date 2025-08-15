@@ -6,13 +6,16 @@
 /*   By: maw <maw@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:25:59 by masase            #+#    #+#             */
-/*   Updated: 2025/08/14 13:09:18 by maw              ###   ########.fr       */
+/*   Updated: 2025/08/15 00:14:41 by maw              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
+# include <ostream>
+# include <iostream>
 # include "AMateria.hpp"
+// class AMateria;
 
 class ICharacter
 {

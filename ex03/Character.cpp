@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masase <masase@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maw <maw@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:25:40 by masase            #+#    #+#             */
-/*   Updated: 2025/08/11 16:26:52 by masase           ###   ########.fr       */
+/*   Updated: 2025/08/14 23:59:15 by maw              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,5 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-    inventory[idx]->use(target);
+    // inventory[idx].use(target);
 }
