@@ -6,7 +6,7 @@
 /*   By: maw <maw@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:25:43 by masase            #+#    #+#             */
-/*   Updated: 2025/08/15 00:09:36 by maw              ###   ########.fr       */
+/*   Updated: 2025/08/17 18:20:38 by maw              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 # define CHARACTER_HPP
 # include "ICharacter.hpp"
 # include "AMateria.hpp"
+# include "Ice.hpp" 
 
 class Character: public ICharacter
 {
 	private:
 		std::string _name;
 		AMateria *inventory[4];
-		AMateria *trash;
+		AMateria *trash[100];
 	public:
 		Character(std::string name);
 		Character();

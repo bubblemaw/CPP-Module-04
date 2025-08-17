@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masase <masase@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maw <maw@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:26:10 by masase            #+#    #+#             */
-/*   Updated: 2025/08/11 16:26:11 by masase           ###   ########.fr       */
+/*   Updated: 2025/08/17 18:21:18 by maw              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ AMateria* MateriaSource::createMateria(std::string const & type)
         if (inventory[i]->getType() == type)      
             return (inventory[i]->clone());
         i++;
-        std::cout << "ca tourne" << std::endl;
     } 
     return (NULL);
 }
