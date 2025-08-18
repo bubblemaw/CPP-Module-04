@@ -6,7 +6,7 @@
 /*   By: maw <maw@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:25:40 by masase            #+#    #+#             */
-/*   Updated: 2025/08/17 18:25:44 by maw              ###   ########.fr       */
+/*   Updated: 2025/08/18 14:01:59 by maw              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,10 +107,12 @@ void Character::equip(AMateria *m)
 		i++;
 	}
 	i = 0;
-    while (inventory[i] && i < 4)
-        i++;		
+    while (inventory[i])
+        i++;
+	if (i >= 4)
+		return;	
 	int j = 0;
-	while (trash[j])
+	while (j < 100 && trash[j]) // is the selected Materia into trash
 	{	
 		if (m == trash[j])
 		{
@@ -123,23 +125,27 @@ void Character::equip(AMateria *m)
 		}
 		j++;
 	}
-    if (!inventory[i])  
+    if (!inventory[i])
+	{
         inventory[i] = m;
+		std::cout << _name << " have just equiped " << inventory[i]->getType() << std::endl;		
+	}
 }
 
 void Character::unequip(int idx)
 {
 	int i = 0;
-	while (trash[i])
+	while (i < 100 && trash[i])
 		i++;
 	if (i > 99)
 	{
-		std::cout << _name << "You're trash is full you can't unequip anymore" << std::endl;
+		std::cout << _name << " trash is full, can't unequip anymore" << std::endl;
 		return;
 	}
 	if (!trash[i])
 		trash[i] = inventory[idx];
     inventory[idx] =  NULL;
+	std::cout << _name << " have just unequiped " << trash[i]->getType() << std::endl;
 }
 
 void Character::use(int idx, ICharacter& target)

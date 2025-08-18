@@ -6,7 +6,7 @@
 /*   By: maw <maw@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:26:10 by masase            #+#    #+#             */
-/*   Updated: 2025/08/17 18:21:18 by maw              ###   ########.fr       */
+/*   Updated: 2025/08/18 14:00:44 by maw              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &obj)
 void MateriaSource::learnMateria(AMateria* m)
 {
     int i = 0;
-    while (inventory[i]) // maybe put i < 4
+    while (i < 4 && inventory[i]) 
         i++;
     if (!inventory[i])  
         inventory[i] = m;
@@ -71,11 +71,11 @@ void MateriaSource::learnMateria(AMateria* m)
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
     int i = 0;
-    while (i < 4)
+    while (i < 4 && inventory[i])
     {
         if (inventory[i]->getType() == type)      
             return (inventory[i]->clone());
         i++;
-    } 
+    }
     return (NULL);
 }
