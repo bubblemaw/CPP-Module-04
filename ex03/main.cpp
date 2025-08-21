@@ -21,11 +21,8 @@ int main()
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 	ICharacter* me = new Character("me");
-	std::cout << "charcter finito" << std::endl;
 	AMateria* tmp;
-	std::cout << "tmp AMateria finito" << std::endl;	
 	tmp = src->createMateria("ice");
-	std::cout << "create materia ice good" << std::endl;	
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
